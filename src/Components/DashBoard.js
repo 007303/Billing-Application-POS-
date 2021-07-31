@@ -41,7 +41,7 @@ const DashBoard=(props)=>{
         ["Average Business Income",`${income}`, "color: #0096FF"] 
       ];
     return(
-        <div class="container">
+        <div >
              <div className="card-deck" style={{width: '100rem'}}>
             <div class="row">
                 <i><h3>Recent Customers</h3></i>

@@ -72,10 +72,10 @@ const CustomerList=(props)=>{
     return(
         <div>
         <div class="row">
-        <div class="col-md-10">
+        <div class="col-md-8">
         <h2>Customers</h2>
         </div>
-        <div class="col-md-4    " >
+        <div class="col-md-4" >
         <input type="text" value={search} onChange={handleSearch} placeholder="Search" className="form-control"/>
         </div>
         </div>

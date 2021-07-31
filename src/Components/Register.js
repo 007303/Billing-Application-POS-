@@ -59,7 +59,7 @@ const Register=(props)=>{
                 address:address
             }
             console.log(data)
-            dispatch(startGetData(data))
+            dispatch(startGetData({data,props}))
             setName("")
             setEmail("")
             setPassword("")
@@ -70,7 +70,7 @@ const Register=(props)=>{
         }
     }
     return(
-        <div style={{backgroundImage: `url("https://image.shutterstock.com/image-vector/accounting-system-abstract-concept-vector-600w-1833402775.jpg")`}}>
+        <div style={{backgroundImage: `url("https://image.shutterstock.com/z/stock-vector-online-shopping-internet-market-mobile-app-shopping-and-people-buy-gifts-smartphone-payment-and-1541828396.jpg")`}}>
         <div class="mt-5">
         <div class="container">
             <div class="row justify-content-center">
@@ -96,7 +96,7 @@ const Register=(props)=>{
                <input type="submit" value="Register" class="btn btn-primary"/>
                </div>
                <div class="col-md-3 align-center">
-               <input type="button" value="Cancel" class="btn btn-outline-primary"/><br/>
+               <input type="button" value="Cancel" class="btn btn-outline-primary" onClick={()=>{props.history.push('/Home')}}/><br/>
                </div>
                </div>
                <div class="row justify-content-center">

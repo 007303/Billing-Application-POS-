@@ -95,7 +95,7 @@ const Billing=(props)=>{
     
     console.log(options)
     const option=prod.map((ele)=>{
-        return({label:ele.name,value:ele._id})
+        return({label:ele.name,value:ele._id,name:"product"})
     })
     return(
         <div class="container">
@@ -128,17 +128,16 @@ const Billing=(props)=>{
                     <div >
                     <div class="row">
                     <select onChange={(e)=>{handleItem(e,i)}} value={ele.product} name="product" class="custom-select" id="inputGroupSelect03" aria-label="Example select with button addon">
-                        <option value="select user" class="custom-select">select Product</option>
+                        <option value="select user"theme={makeAnimated}>select Product</option>
                         {prod.map((ele)=>{
                             return(<option value={ele._id}>{ele.name}</option>)
                         })}
                     </select>
                     {/* <Select 
-                    value="product"
                     options={option}
                     placeholder="select Product"
                     theme={makeAnimated}
-                    onChange={(e)=>{handleItem(e,i)}}
+                    onChange={(e)=>{handleItem({e,i})}}
                     isSearchable/> */}
                     </div>
                     </div>

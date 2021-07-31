@@ -21,8 +21,11 @@ const NavBar=(props)=>{
             {isLoggedIn?
             (
             <div>
-                <div >
+                <div class="row">
+                <div class="container">
                 <nav class="navbar navbar-light" style={{backgroundColor: "#62B1F6"}}>
+                <div class="col-md-6">
+                </div>
                 <Link to="/Dashboard" class="text-decoration-none"  style={{color:'white'}}>DashBoard</Link>
                <Link to="/Customers" class="text-decoration-none"  style={{color:'white'}}>Customers</Link>
                 <Link to="/Products" class="text-decoration-none"  style={{color:'white'}}>Products</Link>
@@ -37,13 +40,16 @@ const NavBar=(props)=>{
                 <Route path="/Profile" component={Profile}/>
             </div>
             </div>
+            </div>
             ):(
             
             <div>
                 <nav class="navbar navbar-light" style={{backgroundColor: "#62B1F6"}}>
+                <div class="col-md-10">
+                </div>
                 <Link to="/Home" class="text-decoration-none" style={{color:'white'}}>Home</Link>
-                <Link to="/Login" class="text-decoration-none"  style={{color:'white'}}>Login</Link>
                 <Link to="/Register" class="text-decoration-none"  style={{color:'white'}}>Register</Link>
+                <Link to="/Login" class="text-decoration-none"  style={{color:'white'}}>Login</Link>
                 </nav>
                 <Route path="/Home" component={Home}/>
                 <Route path="/Login" render={(props)=>{

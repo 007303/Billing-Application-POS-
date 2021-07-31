@@ -1,9 +1,15 @@
 import axios from 'axios'
 export const startGetData=(data)=>{
     return(dispatch)=>{
-        axios.post("http://dct-billing-app.herokuapp.com/api/users/register",data)
+        axios.post("http://dct-billing-app.herokuapp.com/api/users/register",data.data)
              .then((response)=>{
                  const result=response.data
+                 if(result.hasOwnProperty('error')){
+                     alert(result.errors.message)
+                 }else{
+                     alert("You have Successfully Registered")
+                     data.props.history.push("/Login")
+                 }
                  console.log(response.data)
              })
              .catch((error)=>{
@@ -25,6 +31,7 @@ export const startSendData=(data)=>{
                     data.startUserData()
                     data.startProductData()
                     data.startAdminData()
+                    alert("Successfully Logged In")
                     data.props.history.push("/Dashboard")
                  }
                  
